@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
  📦 Inventory Management System
 ---
 Sistem ini dirancang untuk mengelola stok barang, termasuk transaksi barang masuk, barang keluar, serta manajemen user dengan pembagian role Admin dan Staff. Dibangun menggunakan CodeIgniter 4 dengan struktur MVC yang rapi dan modern.
