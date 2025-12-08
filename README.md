@@ -1,7 +1,7 @@
 
  📦 Inventory Management System
 ---
-Sistem ini dirancang untuk mengelola stok barang, termasuk transaksi barang masuk, barang keluar, serta manajemen user dengan pembagian role Admin dan Staff. Dibangun menggunakan CodeIgniter 4 dengan struktur MVC yang rapi dan modern.
+Sistem ini dirancang untuk mengelola stok barang, termasuk transaksi barang masuk, barang keluar, serta manajemen user dengan pembagian role Admin dan Staff. Dibangun menggunakan CodeIgniter 4 yang rapi dan modern.
 ---
 
 ## 🚀 Fitur Utama
@@ -56,7 +56,12 @@ database.default.username = root
 database.default.password =
 database.default.DBDriver = MySQLi
 ```
-Note: *jika anda memiliki username dan password pada MySql maka sesuaikan*
+Note: 
+*jika anda memiliki username dan password pada MySql maka sesuaikan*,
+*jika ingin menjalankan aplikasi tanpa melihat pesan ERROR yang di kirimkan codeigniter maka ubah CI_ENVIRONMENT = development menjadi:*
+```
+# CI_ENVIRONMENT = production
+```
 
 ### 5️⃣ Jalankan project pada server local 
 ```bash
