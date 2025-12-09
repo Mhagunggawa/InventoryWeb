@@ -54,12 +54,33 @@ class BarangKeluarController extends BaseController
         return redirect()->to('/barang-keluar');
     }
 
-    public function delete($id)
-    {
-        $this->barangKeluar->delete($id);
-        session()->setFlashdata('success', 'Data barang keluar berhasil dihapus');
-        return redirect()->to('/barang-keluar');
+public function delete($id)
+{
+    $model = $this->barangKeluar;
+    $barangModel = $this->barang;
+    $data = $model->find($id);
+
+    if (!$data) {
+        session()->setFlashdata('error', 'Data tidak ditemukan!');
+        return redirect()->back();
     }
+
+    $idBarang = $data['id_barang'];
+    $jumlahKeluar = $data['jumlah'];
+
+    // Tambahkan kembali stok barang
+    $barang = $barangModel->find($idBarang);
+    $stokBaru = $barang['stok'] + $jumlahKeluar;
+
+    $barangModel->update($idBarang, ['stok' => $stokBaru]);
+
+    // Hapus transaksi
+    $model->delete($id);
+
+    session()->setFlashdata('success', 'Data barang keluar berhasil dihapus & stok dikembalikan');
+    return redirect()->to('/barang-keluar');
+}
+
 
     public function stafIndex()
     {

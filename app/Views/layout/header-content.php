@@ -64,7 +64,7 @@
           <div class="tab-pane fade show active" id="drp-tab-1" role="tabpanel" aria-labelledby="drp-t1" tabindex="0">
             <a href="<?= base_url('profile') ?>" class="dropdown-item">
               <i class="ti ti-edit-circle"></i>
-              <span>Edit Profile</span>
+              <span>Update Profile</span>
             </a>
           </div>
         </div>

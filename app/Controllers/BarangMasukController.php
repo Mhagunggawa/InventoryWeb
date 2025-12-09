@@ -15,6 +15,7 @@ class BarangMasukController extends BaseController
     {
         $this->barang = new ModelBarang();
         $this->barangMasuk = new ModelBarangMasuk();
+        
     }
 
     public function index()
@@ -38,7 +39,7 @@ class BarangMasukController extends BaseController
 
     public function store()
     {
-        $idUser = session()->get('id_user'); // jika login
+        $idUser = session()->get('id_user'); 
 
         $this->barangMasuk->insert([
             'id_barang' => $this->request->getPost('id_barang'),
@@ -52,12 +53,31 @@ class BarangMasukController extends BaseController
         return redirect()->to('/barang-masuk');
     }
 
-    public function delete($id)
-    {
-        $this->barangMasuk->delete($id);
-        session()->setFlashdata('success', 'Data barang masuk berhasil dihapus');
-        return redirect()->to('/barang-masuk');
+public function delete($id)
+{
+    $model = $this->barangMasuk;
+    $barangModel = $this->barang;
+    $data = $model->find($id);
+
+    if (!$data) {
+        session()->setFlashdata('error', 'Data tidak ditemukan!');
+        return redirect()->back();
     }
+
+    $idBarang = $data['id_barang'];
+    $jumlahMasuk = $data['jumlah'];
+
+    $barang = $barangModel->find($idBarang);
+    $stokBaru = $barang['stok'] - $jumlahMasuk;
+
+    $barangModel->update($idBarang, ['stok' => $stokBaru]);
+
+    $model->delete($id);
+
+    session()->setFlashdata('success', 'Data barang masuk berhasil dihapus & stok dikembalikan');
+    return redirect()->to('/barang-masuk');
+}
+
 
     public function stafIndex()
     {

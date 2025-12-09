@@ -32,7 +32,6 @@
                     <?php endif ?>
 
                     <form action="<?= base_url('profile/update') ?>" method="post">
-
                         <div class="mb-3">
                             <label class="form-label">Username</label>
                             <input type="text"
@@ -41,7 +40,6 @@
                                    value="<?= $user['username'] ?>"
                                    required>
                         </div>
-
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email"
@@ -50,7 +48,6 @@
                                    value="<?= $user['email'] ?>"
                                    required>
                         </div>
-
                         <div class="mb-3">
                             <label class="form-label">Password Baru (Opsional)</label>
                             <input type="password"
@@ -58,11 +55,9 @@
                                    class="form-control"
                                    placeholder="Kosongkan jika tidak diganti">
                         </div>
-
                         <button type="submit" class="btn btn-primary">
                             <i class="ti ti-device-floppy"></i> Update Profile
                         </button>
-
                     </form>
 
                 </div>

@@ -35,9 +35,7 @@
 
                         <form action="<?= base_url('barang-masuk/store') ?>" method="post">
                             <?= csrf_field() ?>
-
                             <div class="row">
-
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label">Pilih Barang</label>
                                     <select name="id_barang" class="form-select" required>
@@ -48,10 +46,8 @@
                                                 <?= esc($b['kode_barang']) ?> — <?= esc($b['nama_barang']) ?>
                                             </option>
                                         <?php endforeach ?>
-
                                     </select>
                                 </div>
-
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Jumlah Masuk</label>
                                     <input type="number"
@@ -61,15 +57,12 @@
                                            min="1"
                                            required>
                                 </div>
-
                             </div>
-
                             <div class="text-end mt-3">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="ti ti-device-floppy"></i> Simpan 
                                 </button>
                             </div>
-
                         </form>
 
                     </div>
