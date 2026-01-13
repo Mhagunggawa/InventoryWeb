@@ -68,13 +68,11 @@ public function delete($id)
     $idBarang = $data['id_barang'];
     $jumlahKeluar = $data['jumlah'];
 
-    // Tambahkan kembali stok barang
     $barang = $barangModel->find($idBarang);
     $stokBaru = $barang['stok'] + $jumlahKeluar;
 
     $barangModel->update($idBarang, ['stok' => $stokBaru]);
 
-    // Hapus transaksi
     $model->delete($id);
 
     session()->setFlashdata('success', 'Data barang keluar berhasil dihapus & stok dikembalikan');
