@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
  📦 Inventory Management System
 ---
@@ -144,3 +145,6 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
 >>>>>>> 9ad45a3 (first commit)
+=======
+# InventoryWeb
+>>>>>>> b2a1a1dcd66f0984700790512f6e86fc7bd748d9
