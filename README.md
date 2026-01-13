@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
  📦 Inventory Management System
 ---
@@ -36,8 +36,6 @@ Atau download ZIP lalu extract ke direktori server lokal kamu.
 ```bash
 composer install
 ```
-
---
 
 ### 3️⃣ Import Database
 1. Nyalakan Webserver dan Mysql
